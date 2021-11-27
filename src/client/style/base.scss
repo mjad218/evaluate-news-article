@@ -1,7 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+
 body {
+    max-width: 900px; 
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    margin: 0 auto;
+    font-family: 'Outfit', sans-serif;
 }
 
 main {
@@ -13,7 +19,6 @@ section {
     margin: 50px auto;
 } 
 form {
-    border: 1px solid #545454;
     border-radius: 3px;
     padding: 40px;
 }

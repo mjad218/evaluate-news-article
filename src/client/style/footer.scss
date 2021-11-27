@@ -1,0 +1,13 @@
+footer  {
+    height: 50px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    p {
+        font-size: 14px;
+        font-weight: 400;
+        padding-inline-start: 20px;
+
+    }
+}

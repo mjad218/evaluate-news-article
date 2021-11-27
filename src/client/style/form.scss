@@ -1,0 +1,19 @@
+form{
+    border: 1px solid #eee; 
+
+    input[type="submit"] {
+        background: #40cb77;
+        border: none;
+        height: 50px;
+        font-family: 'Outfit';
+        text-transform: uppercase;
+        cursor: pointer;
+    }
+    input[type="text"] {
+        background: #fff;
+        border: 1px solid #eee; 
+        height: 40px;
+        font-family: 'Outfit';
+        text-transform: capitalize;
+    }
+} 
