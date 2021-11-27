@@ -1,0 +1,35 @@
+{
+  "name": "evaluate-news-article",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/server/server.js",
+    "build-prod": "webpack --config webpack.prod.js",
+    "build-dev": "webpack-dev-server  --config webpack.dev.js --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mjad218/evaluate-news-article.git"
+  },
+  "author": "Mohamed Gad",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mjad218/evaluate-news-article/issues"
+  },
+  "homepage": "https://github.com/mjad218/evaluate-news-article#readme",
+  "devDependencies": {
+    "@babel/core": "^7.5.4",
+    "@babel/preset-env": "^7.5.4",
+    "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^3.0.0",
+    "html-webpack-plugin": "^5.5.0",
+    "webpack-dev-server": "^4.6.0"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "webpack": "^5.64.4",
+    "webpack-cli": "^4.9.1"
+  }
+}
