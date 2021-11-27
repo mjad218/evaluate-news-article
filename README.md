@@ -17,8 +17,12 @@ Following are the project prerequisites:
 ### How to install my app? 
   1. Clone the repository to your local storage. 
   2. With your own text editor and your terminal type ```npm install``` to install dependencies. 
+
+
 To run the production server: 
 1. Type ```npm run build-prod```.
 2. Type ```npm start``` to launch the app on port 8081.
+
+
 To run the developement server: 
 1. Type ```npm run build-dev``` to launch the app on port 8080.
