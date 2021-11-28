@@ -29,27 +29,24 @@ app.listen(8081, function () {
 })
 
 const getAPIData = async (url) => {
+    const formdata = new FormData();
+    formdata.append("key", "");
+    formdata.append("url", url);
+    formdata.append("lang", "en");  // 2-letter code, like en es fr ...
 
-    const formData = new FormData();
-    formData.append("key", "");
-    formData.append("url",url);
-    formData.append("lang", "en"); 
-
-    let data = await fetch("https://api.meaningcloud.com/sentiment-2.1" , {
-        method: 'POST',
-        body: formData,
-        redirect: 'follow',
-        headers:{
-            'Content-Type': "multipart/form-data"
-        }
-    });
-    data = await data.json();
-    return data; 
-} 
+    const requestOptions = {
+    method: 'POST',
+    body: formdata,
+    redirect: 'follow'
+    };
+    let data;
+    const response = await fetch("https://api.meaningcloud.com/sentiment-2.1", requestOptions)
+    data = await response.json();  
+    return data;
+}
 app.get('/meaning', async (req, res) => {
     console.log(req.query.url);
     const data = await getAPIData(req.query.url); 
     console.log(data);
-    console.log(typeof data);
     res.send(JSON.stringify(data))
 })
