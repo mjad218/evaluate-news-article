@@ -1,3 +1,6 @@
+const dotenv = require('dotenv');
+dotenv.config();
+
 const express = require('express')
 var FormData = require('form-data');
 
@@ -30,7 +33,7 @@ app.listen(8081, function () {
 
 const getAPIData = async (url) => {
     const formdata = new FormData();
-    formdata.append("key", "");
+    formdata.append("key", process.env.API_KEY);
     formdata.append("url", url);
     formdata.append("lang", "en");  // 2-letter code, like en es fr ...
 
