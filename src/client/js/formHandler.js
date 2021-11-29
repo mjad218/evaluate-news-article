@@ -1,10 +1,4 @@
 const displayResult = (data) => {
-    // agreement: "DISAGREEMENT"
-    // confidence: "86"
-    // irony: "NONIRONIC"
-    // model: "general_en"
-    // score_tag: "P"
-    // const container = document.createDocumentFragment();
     const content = `
         <p> 
             <span>Agreement: </span> <i> ${data.agreement}</i>
@@ -31,18 +25,17 @@ function handleSubmit(event) {
 
     // check what text was put into the form field
     let formText = document.getElementById('url').value;
-    Client.checkForName(formText)
     document.getElementById('results').innerHTML = `Loading data...`;
-
     console.log("::: Form Submitted :::")
-    fetch(`http://localhost:8081/meaning?url=${formText}`, {
-        // body: formText
-    })
+    Client.checkForURL(formText) ? 
+    fetch(`http://localhost:8081/meaning?url=${formText}`)
     .then(res => res.json())
     .then(function(res) {
         displayResult(res); 
         console.log(res);
     })
+    : alert("Please Enter a valid url");
+    return true;
 }
 
 export { handleSubmit }
